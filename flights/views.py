@@ -12,3 +12,14 @@ def index(request):
             "flights": Flight.objects.all(),  # pyright: ignore[reportAttributeAccessIssue]
         },
     )
+
+
+def flight(request, flight_id):
+    flight = Flight.objects.get(pk=flight_id)  # pyright: ignore[reportAttributeAccessIssue]
+    return render(
+        request,
+        "flights/flight.html",
+        {
+            "flight": flight,
+        },
+    )
