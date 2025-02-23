@@ -12,6 +12,7 @@ dependencies = [
 dev = [
     "django>=5.1.6",
     "django-request-logging>=0.7.5",
+    "django-stubs>=5.1.3",
     "djlint>=1.36.4",
     "python-decouple>=3.8",
     "ruff>=0.9.7",
@@ -120,16 +121,17 @@ pythonVersion = "3.12"
 
 typeCheckingMode       = "recommended"
 
-reportMissingTypeStubs = false
-reportMissingParameterType = false
-reportUnknownParameterType = false
-reportUnknownVariableType = false
-reportUnknownArgumentType = false
-reportUnknownMemberType = false
-reportUnannotatedClassAttribute = false
-reportImplicitOverride = false
-reportArgumentType = false
-reportAny = false
+reportMissingTypeStubs = "information"
+reportMissingParameterType = "information"
+reportUnknownParameterType = "information"
+reportUnknownVariableType = "information"
+reportUnknownArgumentType = "information"
+reportUnknownMemberType = "information"
+reportUnannotatedClassAttribute = "information"
+reportImplicitOverride = "information"
+reportArgumentType = "information"
+reportAny = "information"
+reportAttributeAccessIssue = false # django false-positive
 
 exclude = [
     "**/node_modules",
