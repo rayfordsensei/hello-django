@@ -131,6 +131,7 @@ reportUnannotatedClassAttribute = "information"
 reportImplicitOverride = "information"
 reportArgumentType = "information"
 reportAny = "information"
+reportMissingTypeArgument = "information"
 reportAttributeAccessIssue = false # django false-positive
 
 exclude = [
