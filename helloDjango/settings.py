@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "tasks",
     "flights",
     "users",
+    "posts",
     "singlepage",
     "django.contrib.admin",
     "django.contrib.auth",

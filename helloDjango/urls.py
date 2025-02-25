@@ -27,4 +27,5 @@ urlpatterns = [
     path("flights/", include("flights.urls")),
     path("users/", include("users.urls")),
     path("singlepage/", include("singlepage.urls")),
+    path("posts/", include("posts.urls")),
 ]
