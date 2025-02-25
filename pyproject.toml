@@ -1,7 +1,7 @@
 [project]
-name = "wiki"
+name = "helloDjango"
 version = "0.1.0"
-description = "Add your description here"
+description = "A testing ground for learning WebDev (Django, JS/TS, ...)"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

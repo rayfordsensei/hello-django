@@ -6,6 +6,12 @@
         <title>Single Page</title>
         <style></style>
         <script>
+            // onActiveHistoryEntryChange
+            window.onpopstate = function(event) {
+                console.log(event.state.section)
+                showSection(event.state.section)
+            }
+
         function showSection(section) {
             fetch(`./sections/${section}`)
             .then(response => response.text())
@@ -18,7 +24,12 @@
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelectorAll("button").forEach(button => {
                 button.onclick = function() {
-                    showSection(this.dataset.section)
+                    // showSection(this.dataset.section)
+
+                    // rewrote with History API
+                    const section = this.dataset.section
+                    history.pushState({section: section}, "", `sections${section}`)
+                    showSection(section)
                 }
             })
         })
