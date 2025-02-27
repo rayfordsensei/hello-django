@@ -13,7 +13,7 @@ class Airport(models.Model):
 class Flight(models.Model):
     origin = models.ForeignKey(
         Airport,
-        on_delete=models.CASCADE,  # cascade deletes corresponding values aswell (flights).
+        on_delete=models.CASCADE,  # cascade deletes corresponding values as well (flights).
         related_name="departures",
     )
     destination = models.ForeignKey(
@@ -23,8 +23,11 @@ class Flight(models.Model):
     )
     duration = models.IntegerField()
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.id}: {self.origin} to {self.destination}"
+
+    def is_valid_flight(self):
+        return self.origin != self.destination and self.duration >= 0
 
 
 class Passenger(models.Model):
@@ -32,5 +35,5 @@ class Passenger(models.Model):
     last = models.CharField(max_length=64)
     flights = models.ManyToManyField(Flight, blank=True, related_name="passengers")
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.first} {self.last}"
