@@ -5,8 +5,18 @@ jobs:
     test_project:
         runs-on: ubuntu-latest
         steps:
+          - name: Setup Python
+            uses: actions/setup-python@main
+            with:
+              python-version: "3.12"
+              architecture: "x64"
+
+          - name: Setup Python
+            run:
+              pip install uv
+              uv sync
+
           - uses: actions/checkout@main
           - name: Run Django unit tests
             run:
-                pip install --user django
-                python manage.py test
+              uv run manage.py test
