@@ -4,7 +4,9 @@ version         = "0.1.0"
 description     = "A testing ground for learning WebDev (Django, JS/TS, ...)"
 readme          = "README.md"
 requires-python = ">=3.12"
-dependencies    = ["django>=5.1.6"]
+dependencies    = [
+    "django>=5.1.6",
+]
 
 [dependency-groups]
 dev = [
@@ -14,6 +16,7 @@ dev = [
     "djlint>=1.36.4",
     "python-decouple>=3.8",
     "ruff>=0.9.7",
+    "selenium>=4.29.0",
 ]
 
 [tool.setuptools]
